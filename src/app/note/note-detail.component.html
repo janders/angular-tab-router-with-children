@@ -1,0 +1,13 @@
+<p>
+  note-detail works!
+</p>
+
+<div *ngIf="note">
+  <div><span class="header">ID:</span>{{note.id}}</div>
+  <div><span class="header">Name:</span>{{note.name}}</div>
+  <div><span class="header">Note:</span>{{note.note}}</div>
+  <br>
+  <button mat-raised-button [routerLink]="'/notes/list/'">Done</button>
+</div>
+
+

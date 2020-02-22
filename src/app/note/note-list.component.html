@@ -1,0 +1,12 @@
+<p>
+  note-list works!
+</p>
+
+<ul *ngFor="let note of notes">
+  <li>
+    <span class="name">{{note.name}}</span>
+    <span class="note">{{note.note}}</span>
+    <button mat-raised-button [routerLink]="['/notes/detail/', note.id]">Details</button>
+    <button mat-raised-button color="warn" [routerLink]="['/notes/delete/', note.id]">Delete</button>
+  </li>
+</ul>

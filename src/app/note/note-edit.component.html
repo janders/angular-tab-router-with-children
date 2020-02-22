@@ -1,0 +1,11 @@
+<p>
+  note-edit works!
+</p>
+
+<form #note="ngForm" (ngSubmit)="onClickSubmit(note.value)">
+  <input type="text" name="name" placeholder="Name" ngModel>
+  <br/>
+  <textarea name="note" placeholder="Notes..." ngModel></textarea>
+  <br/>
+  <button mat-raised-button type="submit" value="submit">Submit</button>
+</form>

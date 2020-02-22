@@ -1,0 +1,54 @@
+.container {
+  width: 600px;
+}
+
+p {
+  font-size: 1.5em;
+}
+
+button.add {
+  float: right;
+  margin: 2px auto;
+  width: 100px;
+}
+
+ul li {
+  width: 100%;
+}
+
+ul li span {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 150px;
+  padding-right: 6px;
+}
+
+ul li span.note {
+  padding-right: 76px;
+}
+
+ul li button {
+  margin: 0 0 0 12px;
+}
+
+input, textarea {
+  width: 300px;
+  margin-top: 12px;
+}
+
+textarea {
+  height: 100px;
+}
+
+span.header {
+  display: inline-block;
+  width: 100px;
+  padding: 6px;
+  font-weight: 700;
+}
+
+input, textarea {
+  font-size: 1.2em;
+}
