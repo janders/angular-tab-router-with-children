@@ -15,7 +15,7 @@ npm start
 
 Open up your favorite browser and go to [localhost:4200](http://localhost:4200). Note, you will automatically be routed to [localhost:4200/notes/list](http://localhost:4200/notes/list).
 
-<img src="readme.png" width="800" alt="The application UI"/>
+<img src="https://raw.githubusercontent.com/janders/angular-tab-router-with-children/assets/readme.png" width="780" alt="The application UI"/>
 
 ## Project Structure
 
