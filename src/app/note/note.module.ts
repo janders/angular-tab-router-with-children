@@ -1,34 +1,31 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { MatButtonModule } from '@angular/material/button';
-import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
+
+import { MaterialModule } from '../material.module';
+import { NoteRoutingModule } from './note-routing.module';
 
 import {
   NoteComponent,
   NoteDeleteComponent,
   NoteDetailComponent,
-  NoteListComponent,
-  NoteEditComponent
+  NoteEditComponent,
+  NoteListComponent
 } from './';
-
-import { NoteRoutingModule } from './note-routing.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    MatButtonModule,
-    MatDialogModule,
     FormsModule,
+    MaterialModule,
     NoteRoutingModule
   ],
   declarations: [
     NoteComponent,
     NoteDeleteComponent,
     NoteDetailComponent,
-    NoteListComponent,
-    NoteEditComponent
+    NoteEditComponent,
+    NoteListComponent
   ],
   exports: [
     NoteRoutingModule
