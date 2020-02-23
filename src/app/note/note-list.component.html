@@ -1,7 +1,7 @@
 <p>
   note-list works!
 </p>
-
+<div *ngIf="!notes.length">No notes found.</div>
 <ul *ngFor="let note of notes">
   <li>
     <span class="name">{{note.name}}</span>
