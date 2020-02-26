@@ -19,7 +19,24 @@ Open up your favorite browser and go to [localhost:4200](http://localhost:4200).
 
 ## Project Structure
 
-This project uses `mat-tab-nav-bar` in the `home module` to create a set of navigation tabs called **Notes**, **Photos** and **Documents**. 
+This project uses `mat-tab-nav-bar` in the `home module` to create a set of navigation tabs called **Notes**, **Photos** and **Documents**.
+
+Unlike many Angular projects the app-routing.module.ts file is trivially simple. It looks like this:
+
+`app-routing.module.ts`
+
+```typescript
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+
+export const routes: Routes = [];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes, { enableTracing: true })],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
+```
 
 Creating the tabs starts by injecting a `router` into the constructor in `home.component.ts` and adding `navLinks` to hold an array of objects to represent the tabs:
 
@@ -81,30 +98,33 @@ The `note module\component` includes an additional set of child components to si
 
 Each child component is lazy loaded using the following syntax:
 
-app-routing.module.ts
+`loadChildren: () => import('../note/note.module').then(m => m.NoteModule)`
+
+`home-routing.module.ts`
 
 ```typescript
-{
+import { Route } from '@angular/router';
+
+import { HomeComponent } from './home.component';
+
+export const HOME_ROUTE: Route = {
   path: '',
-  loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
-}
-```
-
-home-routing.module.ts
-
-```typescript
-{
-  path: 'notes',
-  loadChildren: () => import('../note/note.module').then(m => m.NoteModule)
-},
-{
-  path: 'photos',
-  loadChildren: () => import('../photo/photo.module').then(m => m.PhotoModule)
-},
-{
-  path: 'documents',
-  loadChildren: () => import('../document/document.module').then(m => m.DocumentModule)
-}
+  component: HomeComponent,
+  children: [
+    {
+      path: 'notes',
+      loadChildren: () => import('../note/note.module').then(m => m.NoteModule)
+    },
+    {
+      path: 'photos',
+      loadChildren: () => import('../photo/photo.module').then(m => m.PhotoModule)
+    },
+    {
+      path: 'documents',
+      loadChildren: () => import('../document/document.module').then(m => m.DocumentModule)
+    }
+  ]
+};
 ```
 
 Angular 8 uses the above form for dynamic imports. If you are using an older version of Angular you are probably familiar with this form of import:
